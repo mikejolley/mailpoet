@@ -122,4 +122,9 @@ class WorkersFactory {
   public function createReEngagementEmailsSchedulerWorker() {
     return $this->container->get(ReEngagementEmailsScheduler::class);
   }
+
+  /** @return NewsletterTemplateThumbnails */
+  public function createNewsletterTemplateThumbnailsWorker() {
+    return $this->container->get(NewsletterTemplateThumbnails::class);
+  }
 }
