@@ -667,7 +667,7 @@ class Populator {
 
   private function scheduleTask($type, $datetime, $priority = null) {
     $task = ScheduledTask::where('type', $type)
-      ->whereRaw('status = ? OR status IS NULL', [ScheduledTask::STATUS_SCHEDULED])
+      ->whereRaw('(status = ? OR status IS NULL)', [ScheduledTask::STATUS_SCHEDULED])
       ->findOne();
     if ($task) {
       return true;
